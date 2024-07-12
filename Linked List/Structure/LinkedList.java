@@ -59,12 +59,15 @@ class LinkedList{
         while(temp!=null){
             System.out.print(temp.data+"->");
             temp=temp.next;
+            size++;
         }
         System.out.println("null");
     }
     public static Node head;
     public static Node tail;
     public static int nodes;
+    public static int size;
+
     public static void main(String[] args){
         LinkedList l1 = new LinkedList();
         l1.addFirst(5);
@@ -75,5 +78,6 @@ class LinkedList{
         l1.add(6,99);
         l1.add(5,0);
         l1.print();
+        System.out.println("Size is "+size);
     }
 }
