@@ -53,6 +53,13 @@ class LinkedList{
         temp.next=newNode;
 
     }
+
+    public int removeFirst(){
+        int val = head.data;
+        head=head.next;
+        return val;
+    }
+
     public void print(){
         if(head==null){
             System.out.println("No data exists.");
@@ -82,5 +89,7 @@ class LinkedList{
         l1.add(0,2);
         l1.print();
         System.out.println("Size is "+l1.size);
+        l1.removeFirst();
+        l1.print();
     }
 }
