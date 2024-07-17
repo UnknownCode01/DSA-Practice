@@ -86,6 +86,19 @@ class LinkedList{
         return val;
     }
 
+    // public int remove(){
+
+    // }
+
+    public boolean itrSearch(int x){
+        Node ptr=head;
+        while(ptr!=null){
+            if(ptr.data==x) return true;
+            else ptr=ptr.next;
+        }
+        return false;
+    }
+
     public void print(){
         if(head==null){
             System.out.println("No data exists.");
@@ -121,6 +134,8 @@ class LinkedList{
         l1.removeLast();
         l1.print();
         System.out.println("Size is "+l1.size);
+        System.out.println(l1.itrSearch(1));
+        System.out.println(l1.itrSearch(10));
 
     }
 }
