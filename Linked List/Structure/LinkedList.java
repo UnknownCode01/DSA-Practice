@@ -86,9 +86,25 @@ class LinkedList{
         return val;
     }
 
-    // public int remove(){
-
-    // }
+    public int remove(int x){
+        Node temp = head;
+        if(temp.data == x) {
+            head=head.next;
+            size--;
+            return 0;
+        }
+        Node prev=head;
+        while(temp!=null){
+            if(temp.data == x) {
+                prev.next=prev.next.next;
+                size--;
+                return 0;
+            }
+            prev=temp;
+            temp=temp.next;
+        }
+        return -1;
+    }
 
     public boolean itrSearch(int x){
         Node ptr=head;
@@ -132,6 +148,15 @@ class LinkedList{
         l1.print();
         System.out.println("Size is "+l1.size);
         l1.removeLast();
+        l1.print();
+        System.out.println("Size is "+l1.size);
+        l1.remove(7);
+        l1.print();
+        System.out.println("Size is "+l1.size);
+        l1.remove(9);
+        l1.print();
+        System.out.println("Size is "+l1.size);
+        l1.remove(2);
         l1.print();
         System.out.println("Size is "+l1.size);
         System.out.println(l1.itrSearch(1));
