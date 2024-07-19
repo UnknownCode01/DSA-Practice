@@ -115,6 +115,14 @@ class LinkedList{
         return false;
     }
 
+    public int recSearch(Node h, int x){
+        if(h==null) return -1;
+        if(h.data==x) return 0;
+        int idx=recSearch(h.next,x);
+        if(idx==-1) return -1;
+        return idx+1;
+    }
+
     public void print(){
         if(head==null){
             System.out.println("No data exists.");
@@ -161,6 +169,8 @@ class LinkedList{
         System.out.println("Size is "+l1.size);
         System.out.println(l1.itrSearch(1));
         System.out.println(l1.itrSearch(10));
+        System.out.println(l1.recSearch(head,4));
+        System.out.println(l1.recSearch(head,6));
 
     }
 }
