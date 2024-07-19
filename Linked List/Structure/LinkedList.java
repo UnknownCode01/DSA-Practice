@@ -123,6 +123,19 @@ class LinkedList{
         return idx+1;
     }
 
+    public void reverse(){
+        Node prev=null;
+        Node curr=tail=head;
+        Node next;
+        while(curr!=null){
+            next=curr.next;
+            curr.next=prev;
+            prev=curr;
+            curr=next;
+        }
+        head=prev;
+    }
+
     public void print(){
         if(head==null){
             System.out.println("No data exists.");
@@ -171,6 +184,8 @@ class LinkedList{
         System.out.println(l1.itrSearch(10));
         System.out.println(l1.recSearch(head,4));
         System.out.println(l1.recSearch(head,6));
+        l1.reverse();
+        l1.print();
 
     }
 }
