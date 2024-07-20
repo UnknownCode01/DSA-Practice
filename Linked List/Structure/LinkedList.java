@@ -8,7 +8,6 @@ class LinkedList{
         } 
     }
     public void addFirst(int data){
-        nodes++;
         size++;
         Node newNode=new Node(data);
         if(head==null){
@@ -20,7 +19,6 @@ class LinkedList{
         head=newNode;
     }
     public void addLast(int data){
-        nodes++;
         size++;
         Node newNode=new Node(data);
         if(head==null){
@@ -32,8 +30,8 @@ class LinkedList{
         tail=newNode;
     }
     public void add(int idx, int data){
-        if(idx>nodes){
-            System.out.println("Index exceeds nodes");
+        if(idx>size){
+            System.out.println("Index no "+idx+" exceeds node size "+size);
             return;
         }
         if(idx==0){
@@ -41,7 +39,6 @@ class LinkedList{
             return;
         }
         size++;
-        nodes++;
         Node temp=head;
         int i=0;
         while(i<idx-1){
@@ -106,36 +103,6 @@ class LinkedList{
         return -1;
     }
 
-    public boolean itrSearch(int x){
-        Node ptr=head;
-        while(ptr!=null){
-            if(ptr.data==x) return true;
-            else ptr=ptr.next;
-        }
-        return false;
-    }
-
-    public int recSearch(Node h, int x){
-        if(h==null) return -1;
-        if(h.data==x) return 0;
-        int idx=recSearch(h.next,x);
-        if(idx==-1) return -1;
-        return idx+1;
-    }
-
-    public void reverse(){
-        Node prev=null;
-        Node curr=tail=head;
-        Node next;
-        while(curr!=null){
-            next=curr.next;
-            curr.next=prev;
-            prev=curr;
-            curr=next;
-        }
-        head=prev;
-    }
-
     public void print(){
         if(head==null){
             System.out.println("No data exists.");
@@ -148,9 +115,9 @@ class LinkedList{
         }
         System.out.println("null");
     }
+
     public static Node head;
     public static Node tail;
-    public static int nodes;
     public static int size;
 
     public static void main(String[] args){
@@ -180,12 +147,6 @@ class LinkedList{
         l1.remove(2);
         l1.print();
         System.out.println("Size is "+l1.size);
-        System.out.println(l1.itrSearch(1));
-        System.out.println(l1.itrSearch(10));
-        System.out.println(l1.recSearch(head,4));
-        System.out.println(l1.recSearch(head,6));
-        l1.reverse();
-        l1.print();
 
     }
 }
