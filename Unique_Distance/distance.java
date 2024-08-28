@@ -1,5 +1,6 @@
 // In this program I am finding unique distance covered by many people
 
+
 import java.util.*;
 public class distance implements Comparable<distance>{
     private int d1;
