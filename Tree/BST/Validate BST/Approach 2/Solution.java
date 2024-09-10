@@ -51,10 +51,10 @@ class Solution{
         // for(int i=0;i<arr.length;i++){
         //     root=insert(root,arr[i]);
         // }
-        Node root=new Node(3);
-        root.left = new Node(2);
-        root.right = new Node(5);
-        root.left.right = new Node(4);
+        Node root=new Node(5);
+        root.left = new Node(3);
+        root.right = new Node(6);
+        root.left.right = new Node(7);
 
         System.out.println("Inorder Traversal");
         inorder(root);
