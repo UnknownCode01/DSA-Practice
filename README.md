@@ -1,1 +1,1 @@
-All Dsa questions are practiced in Java
+All Dsa questions that are practiced in Java
