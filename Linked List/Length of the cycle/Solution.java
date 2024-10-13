@@ -9,20 +9,47 @@ class Solution{
         }
     }
     public static int countNodesinLoop(Node head) {
-        Node p=head;
-        for(int i=0;i<6;i++){
-            System.out.print(p.data+" ");
-            p=p.next;
+        Node slow = head;
+        Node fast = head;
+        boolean flag=false;
+        while(fast!=null && fast.next!=null){
+            slow = slow.next;
+            fast = fast.next.next;
+            if(slow==fast){
+                flag=true;
+                break;
+            }
         }
-        return -1;
+        if(flag==false){
+            return 0;
+        }
+        slow = head;
+        while(slow!=fast){
+            slow=slow.next;
+            fast=fast.next;
+        }
+        int count = 1;
+        while(fast!=null && fast.next!=null){
+            fast=fast.next;
+            if(slow==fast){
+                return count;
+            }
+            count++;
+        }
+        return count;
     }
     public static void main(String[] args){
-        Node head=new Node(0);
-        head.next=new Node(1);
-        head.next.next=new Node(2);
-        head.next.next.next=new Node(3);
-        head.next.next.next.next=new Node(4);
-        head.next.next.next.next.next=head.next;
+        Node head=new Node(25);
+        head.next=new Node(14);
+        head.next.next=new Node(19);
+        head.next.next.next=new Node(33);
+        head.next.next.next.next=new Node(10);
+        head.next.next.next.next.next=new Node(21);
+        head.next.next.next.next.next.next=new Node(39);
+        head.next.next.next.next.next.next.next=new Node(90);
+        head.next.next.next.next.next.next.next.next=new Node(58);
+        head.next.next.next.next.next.next.next.next.next=new Node(45);
+        head.next.next.next.next.next.next.next.next.next.next=head.next.next.next;
 
         System.out.println(countNodesinLoop(head));
     }
