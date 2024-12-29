@@ -1,4 +1,3 @@
-import java.util.*;
 class Solution {
     static void bitManipulation(int num, int i) {
         // code here

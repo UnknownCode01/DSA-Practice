@@ -1,4 +1,3 @@
-import java.util.*;
 class Solution{
     public static int and(int a, int b){
         int x = 0;
