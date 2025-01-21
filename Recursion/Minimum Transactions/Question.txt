@@ -1,0 +1,31 @@
+Transaction Simplification
+
+Implement a prototype service to simplify a group of debt transactions.
+
+
+There are n people, and a list of m debts amongst them where debts[i] = [from[i], to[i], amount[i]] represents that person from[i] owes the person to[i] an amount of amount[i].
+
+Given the array debts, find the minimum number of transactions required to clear all the debts.
+
+Sample Case 0
+
+3
+→n = 3
+
+2
+→size of debt m = 2
+
+3
+→size of debt[i] = 3
+
+0 1 10
+
+2 0 5
+
+debts[] = [[0, 1, 10], [2, 0, 5]]
+
+Sample Output
+2
+
+Explanation
+Person 2 must pay person 0 5 units, and person 0 must pay person 1 10 units.
