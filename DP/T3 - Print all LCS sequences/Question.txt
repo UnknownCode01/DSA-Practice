@@ -1,0 +1,22 @@
+GFG: Print all LCS sequences
+
+You are given two strings s and t. Now your task is to print all longest common sub-sequences in lexicographical order.
+
+Note -  A Sub-sequence is derived from another string by deleting some or none of the elements without changing the order of the remaining elements.
+
+Example 1:
+Input: s = abaaa, t = baabaca
+Output: aaaa abaa baaa
+Explanation - Length of lcs is 4, in lexicographical order they are aaaa, abaa, baaa
+
+Example 2:
+Input: s = aaa, t = a
+Output: a
+Your Task:
+You do not need to read or print anything. Your task is to complete the function all_longest_common_subsequences() which takes strings s and t as first and second parameters respectively and returns a list of strings which contains all possible longest common subsequences in lexicographical order.
+ 
+Expected Time Complexity: O(n3)
+Expected Space Complexity: O(k * n) where k is a constant less than n.
+ 
+Constraints:
+1 ≤ Length of both strings ≤ 50
