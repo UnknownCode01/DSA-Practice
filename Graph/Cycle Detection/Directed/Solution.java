@@ -12,11 +12,13 @@ class Solution{
     public static boolean dfs(int curr, boolean[] vis, boolean[] stack, ArrayList<ArrayList<Integer>> graph){
         vis[curr] = true;
         stack[curr] = true;
-        for(int i=0;i<graph.get(curr).size();i++){
-            if(stack[graph.get(curr).get(i)]==true){
+        for(int i:graph.get(curr)){
+            //node not visited
+            if(!vis[i] && dfs(i, vis, stack, graph)){
                 return true;
             }
-            if(!vis[graph.get(curr).get(i)] && dfs(graph.get(curr).get(i), vis, stack, graph)){
+            //node visited on the same path
+            if(stack[i]==true){
                 return true;
             }
         }
