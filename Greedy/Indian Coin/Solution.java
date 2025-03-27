@@ -1,10 +1,10 @@
 import java.util.*;
 class Solution{
     public static void main(String[] args){
-        Integer[] coins = {1,2,5,10,20,50,100,200,2000};
+        Integer[] coins = {1,2,5,10,20,50,100,200,500,2000};
         Arrays.sort(coins,Collections.reverseOrder());
         int count=0;
-        int amount=590;
+        int amount=662;
         ArrayList<Integer> arr = new ArrayList<>();
 
         for(int i=0;i<coins.length;i++){
