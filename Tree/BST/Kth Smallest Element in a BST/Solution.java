@@ -36,7 +36,7 @@ class Solution {
     public static int kthSmallest(TreeNode root, int k) {
         int[] ans = { 0 };
         int[] counter = { 0 };
-        f(root, k, counter, ans);
+        f(root, k, counter, ans);//In-Order Traversal
         return ans[0];
     }
 
